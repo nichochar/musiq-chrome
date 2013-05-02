@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Musiq Manager",
+  "description": "This extension alliws to control one's web based music experience better.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://secure.flickr.com/"
+  ]
+}
