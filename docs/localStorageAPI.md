@@ -5,6 +5,18 @@ The database.js class implements a variable called `queueDB`, which can be
 called to perform operations on the queue.
 This document lists the API functionalities
 
+Index
+-----
+  * [Format of song object stored in DB](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#song-stored-in-db-format)
+  * [Queue format](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#queue-format)
+  * [Checking for Browser support](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#adding-a-song-to-the-end-of-the-queue)
+  * [Getting the Queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#getting-the-queue)
+  * [Writing the Queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#writing-the-queue)
+  * [Adding a song to the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#adding-a-song-to-the-end-of-the-queue)
+  * [Popping a song from the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#popping-a-song-from-the-queue)
+  * [Removing a song from the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#removing-a-song-from-the-queue)
+  * [Querying for a song in the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#querying-for-a-song-in-the-queue)
+
 Song stored in DB format
 -----------------------
 Example of a song, with the information we will find in the DB
@@ -27,6 +39,16 @@ Queue format
 * The objects are the songs
 * Most recent song at the end, next song to be played at beginning
 
+```json
+  {"songQueue":
+    [
+      {song 1},
+      {song 2},
+      {song 3}
+    ]
+  }
+```
+
 Checking for browser support
 ----------------------------
 We use localStorage for storing the queue data, this can be used to check that this feature is supported on the client's browser
@@ -47,7 +69,7 @@ Writing the queue
 ~~~js
 queueDB.setQueueFromList(queueList);
 ~~~
-Overwrites the queue with the list past in as a parameter
+Overwrites the queue with the list past in as a parameter. This should be avoided, since the other functions can be used for all the common operations.
 
 Adding a song to the end of the Queue
 -------------------------------------
