@@ -30,6 +30,20 @@ Queue format
 Getting the queue
 -----------------
 ~~~javascript
-queueDB.getQueueList()
+queueDB.getQueueList();
 ~~~
-Gets the queue 
+Returns the queue as an ordered list of song objects
+
+Writing the queue
+-----------------
+~~~js
+queueDB.setQueueFromList(queueList);
+~~~
+Overwrites the queue with the list past in as a parameter
+
+Modifying the queue
+-------------------
+  * Adding a song
+  ~~~js
+queueDB.addSongToQueue(songObject);
+  ~~~
