@@ -38,7 +38,7 @@ var localStorageDB = {
     localStorage['songQueue'] = stringQueue;
   },
 
-  getNextSongInQueue: function() {
+  popNextSongInQueue: function() {
     //@TODO:to become pop
     //Returns the first song if it exists else null
     var queue = this.getJsonQueueList();
@@ -53,31 +53,18 @@ var localStorageDB = {
     }
   },
 
-  getSongByIdentifier: function(identifier, value, removeSong){
+  getSongByIdentifier: function(identifier, value){
     //returns a specific song chosen by an identifier and it's string value
-    //The removeSong is a bool, if true then the song gets taken out of the queue
+    //If this doesn't work: returns null
     try {
       var queue = this.getJsonQueueList();
       var result = {}
       for(var i = 0; i < queue.length; i++) {
         if (queue[i][identifier] === value) {
-          if (removeSong === true){
-          result = queue.splice(i)[0];
-          break
-          }
-          else {
-            result = queue[i]
-            break
+            return queue[i]
           }
         }
       }
-      if (!$.isEmptyObject(result)){
-        return result;
-      }
-      else{
-        return null;
-      }
-    }
     catch(errorCode){
       return null;
     }
@@ -86,14 +73,20 @@ var localStorageDB = {
   addSongToQueue: function(songObject) {
     //Adds a song object to the queue
     //The argument is a JS object
+    //Returns the new queue
     var queue = this.getJsonQueueList();
     queue.push(songObject);
     this.writeQueueFromList(queue);
+    return queue;
+  },
+
+  removeSongFromQueue: function(index) {
+    //Removes the song at the index passed as a parameter
+    //Returns the new queue
+    var queue = this.getJsonQueueList();
+    queue.splice(index,1);
+    this.writeQueueFromList(queue);
+    return queue;
   }
 }
-
-
-
-//@TODO: removesongfromqueue
-
 

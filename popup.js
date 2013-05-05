@@ -82,15 +82,22 @@ var kittenGenerator = {
 // Run our kitten generation script as soon as the document's DOM is ready.
 document.addEventListener('DOMContentLoaded', function () {
   //audioPlayer.initializePlayer("http://www.largesound.com/ashborytour/sound/brobob.mp3");
- jsono = [{'oh hai':'nigga'},{'oh hei':'bitch'}];
+ jsono = [{'bitch':'you cray'},{'oh hai':'nigga'},{'oh hei':'bitch'}];
  localStorageDB.writeQueueFromList(jsono);
   console.log(localStorageDB.getJsonQueueList());
-  console.log(localStorageDB.getNextSongInQueue());
+  console.log('popping next song');
+  console.log(localStorageDB.popNextSongInQueue());
   console.log(localStorageDB.getJsonQueueList());
-  console.log(localStorageDB.getSongByIdentifier('oh hai','nigga',false));
+  console.log('getting the oh hai nigga object');
+  console.log(localStorageDB.getSongByIdentifier('oh hai','nigga'));
   console.log(localStorageDB.getJsonQueueList());
+  console.log('adding the hei hei salope object');
   console.log(localStorageDB.addSongToQueue({'hei hei':'salope'}));
   console.log(localStorageDB.getJsonQueueList());
+  console.log('removing the song at index 0 from the queue, which is the oh hai nigga one');
+  console.log(localStorageDB.removeSongFromQueue(0));
+  console.log(localStorageDB.getJsonQueueList());
+
   var msg = 'lol';
   $('#player').append('<p>'+msg+'</p>');
 });
