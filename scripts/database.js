@@ -61,10 +61,10 @@ var queueDB = {
       var result = {}
       for(var i = 0; i < queue.length; i++) {
         if (queue[i][identifier] === value) {
-            return queue[i]
-          }
+          return queue[i]
         }
       }
+    }
     catch(errorCode){
       return null;
     }
@@ -85,11 +85,11 @@ var queueDB = {
     //Returns the new queue
     var queue = this.getQueue();
     try {
-    queue.splice(index,1);
-    this.setQueueFromList(queue);
-    return queue;
+      queue.splice(index,1);
+      this.setQueueFromList(queue);
+      return queue;
     }
-    catch {
+    catch(errorCode) {
       return false
     }
   }
