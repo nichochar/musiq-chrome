@@ -13,7 +13,7 @@ Example of a song, with the information we will find in the DB
    "artist":"The Doors",
    "title":"Riders on the Storm",
    "url":"http://www.youtube.com/watch?v=i_eQGsbHhDo",
-   "streamUrl":"http://www.fake.com/stream-riders-doors"
+   "streamUrl":"http://www.fake.com/stream-riders-doors",
    "artworkUrl":"http://www.progarchives.com/progressive_rock_discography_covers/2772/cover_15485992009.jpg",
    "provider":"youtube",
    "providerSongId":"v=i_eQGsbHhDo",
@@ -23,14 +23,13 @@ Example of a song, with the information we will find in the DB
 
 Queue format
 ------------
-*The queue is an ordered javascript array. 
-*The objects are the songs.
-*The most recent song is at the end, the next song to be played at the
-beginning.
-Here is an example of a queue with 3 songs:
+*The queue is an ordered javascript array
+*The objects are the songs
+*Most recent song at the end, next song to be played at beginning
+
 Getting the queue
 -----------------
-~~~shell
+~~~javascript
 queueDB.getQueueList()
 ~~~
 Gets the queue 
