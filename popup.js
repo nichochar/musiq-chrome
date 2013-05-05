@@ -83,20 +83,20 @@ var kittenGenerator = {
 document.addEventListener('DOMContentLoaded', function () {
   //audioPlayer.initializePlayer("http://www.largesound.com/ashborytour/sound/brobob.mp3");
  jsono = [{'bitch':'you cray'},{'oh hai':'nigga'},{'oh hei':'bitch'}];
- localStorageDB.writeQueueFromList(jsono);
-  console.log(localStorageDB.getJsonQueueList());
+ queueDB.writeQueueFromList(jsono);
+  console.log(queueDB.getQueue());
   console.log('popping next song');
-  console.log(localStorageDB.popNextSongInQueue());
-  console.log(localStorageDB.getJsonQueueList());
+  console.log(queueDB.popNextSongInQueue());
+  console.log(queueDB.getQueue());
   console.log('getting the oh hai nigga object');
-  console.log(localStorageDB.getSongByIdentifier('oh hai','nigga'));
-  console.log(localStorageDB.getJsonQueueList());
+  console.log(queueDB.getSongByIdentifier('oh hai','nigga'));
+  console.log(queueDB.getQueue());
   console.log('adding the hei hei salope object');
-  console.log(localStorageDB.addSongToQueue({'hei hei':'salope'}));
-  console.log(localStorageDB.getJsonQueueList());
+  console.log(queueDB.addSongToQueue({'hei hei':'salope'}));
+  console.log(queueDB.getQueue());
   console.log('removing the song at index 0 from the queue, which is the oh hai nigga one');
-  console.log(localStorageDB.removeSongFromQueue(0));
-  console.log(localStorageDB.getJsonQueueList());
+  console.log(queueDB.removeSongFromQueue(0));
+  console.log(queueDB.getQueue());
 
   var msg = 'lol';
   $('#player').append('<p>'+msg+'</p>');

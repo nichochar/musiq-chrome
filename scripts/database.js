@@ -3,7 +3,7 @@
 //The most recent song is at the end
 //The next song to be played is at the beginning
 
-var localStorageDB = {
+var queueDB = {
   //Checks for browser support of the localStorage
   checkBrowserSupport: function() {
     if (typeof(localStorage) == 'undefined' ) {
@@ -26,14 +26,14 @@ var localStorageDB = {
     }
   },
 
-  getJsonQueueList: function(){
+  getQueue: function(){
     //Returns the queue as an ordered list of song objects
     this.initializeDB();
     var result = JSON.parse(localStorage['songQueue']);
     return result['queue']
   },
 
-  writeQueueFromList: function(jsonQueueList) {
+  setQueueFromList: function(jsonQueueList) {
     var stringQueue = JSON.stringify({'queue':jsonQueueList});
     localStorage['songQueue'] = stringQueue;
   },
@@ -41,10 +41,10 @@ var localStorageDB = {
   popNextSongInQueue: function() {
     //@TODO:to become pop
     //Returns the first song if it exists else null
-    var queue = this.getJsonQueueList();
+    var queue = this.getQueue();
     if (queue[0]){
       result = queue.shift();
-      this.writeQueueFromList(queue);
+      this.setQueueFromList(queue);
 
       return result;
     }
@@ -57,7 +57,7 @@ var localStorageDB = {
     //returns a specific song chosen by an identifier and it's string value
     //If this doesn't work: returns null
     try {
-      var queue = this.getJsonQueueList();
+      var queue = this.getQueue();
       var result = {}
       for(var i = 0; i < queue.length; i++) {
         if (queue[i][identifier] === value) {
@@ -74,19 +74,24 @@ var localStorageDB = {
     //Adds a song object to the queue
     //The argument is a JS object
     //Returns the new queue
-    var queue = this.getJsonQueueList();
+    var queue = this.getQueue();
     queue.push(songObject);
-    this.writeQueueFromList(queue);
+    this.setQueueFromList(queue);
     return queue;
   },
 
   removeSongFromQueue: function(index) {
     //Removes the song at the index passed as a parameter
     //Returns the new queue
-    var queue = this.getJsonQueueList();
+    var queue = this.getQueue();
+    try {
     queue.splice(index,1);
-    this.writeQueueFromList(queue);
+    this.setQueueFromList(queue);
     return queue;
+    }
+    catch {
+      return false
+    }
   }
 }
 
