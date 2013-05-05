@@ -7,15 +7,15 @@ This document lists the API functionalities
 
 Index
 -----
-  * [Format of song object stored in DB](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#song-stored-in-db-format)
-  * [Queue format](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#queue-format)
-  * [Checking for Browser support](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#adding-a-song-to-the-end-of-the-queue)
-  * [Getting the Queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#getting-the-queue)
-  * [Writing the Queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#writing-the-queue)
-  * [Adding a song to the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#adding-a-song-to-the-end-of-the-queue)
-  * [Popping a song from the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#popping-a-song-from-the-queue)
-  * [Removing a song from the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#removing-a-song-from-the-queue)
-  * [Querying for a song in the queue](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#querying-for-a-song-in-the-queue)
+  * [Format of song object stored in DB](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#song-stored-in-db-format)
+  * [Queue format](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#queue-format)
+  * [Checking for Browser support](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#checking-for-browser-support)
+  * [Getting the Queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#getting-the-queue)
+  * [Writing the Queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#writing-the-queue)
+  * [Adding a song to the queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#adding-a-song-to-the-end-of-the-queue)
+  * [Popping a song from the queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#popping-a-song-from-the-queue)
+  * [Removing a song from the queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#removing-a-song-from-the-queue)
+  * [Querying for a song in the queue](https://github.com/nichochar/musiq-chrome/blob/documentation/docs/localStorageAPI.md#querying-for-a-song-in-the-queue)
 
 Song stored in DB format
 -----------------------
