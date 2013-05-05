@@ -9,15 +9,15 @@ Song stored in DB format
 -----------------------
 Example of a song, with the information we will find in the DB
 ~~~json
-  {'id': 432,
-   'artist':'The Doors',
-   'title':'Riders on the Storm',
-   'url':'http://www.youtube.com/watch?v=i_eQGsbHhDo',
-   'streamUrl':'http://www.fake.com/stream-riders-doors'
-   'artworkUrl':'http://www.progarchives.com/progressive_rock_discography_covers/2772/cover_15485992009.jpg',
-   'provider':'youtube',
-   'providerSongId':'v=i_eQGsbHhDo',
-   'duration':440400
+  {"id": 432,
+   "artist":"The Doors",
+   "title":"Riders on the Storm",
+   "url":"http://www.youtube.com/watch?v=i_eQGsbHhDo",
+   "streamUrl":"http://www.fake.com/stream-riders-doors"
+   "artworkUrl":"http://www.progarchives.com/progressive_rock_discography_covers/2772/cover_15485992009.jpg",
+   "provider":"youtube",
+   "providerSongId":"v=i_eQGsbHhDo",
+   "duration":440400
   }
 ~~~
 
