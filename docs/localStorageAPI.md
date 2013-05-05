@@ -8,7 +8,7 @@ This document lists the API functionalities
 Song stored in DB format
 -----------------------
 Example of a song, with the information we will find in the DB
-~~~json
+```json
   {"id": 432,
    "artist":"The Doors",
    "title":"Riders on the Storm",
@@ -19,7 +19,7 @@ Example of a song, with the information we will find in the DB
    "providerSongId":"v=i_eQGsbHhDo",
    "duration":440400
   }
-~~~
+```
 
 Queue format
 ------------
@@ -27,11 +27,19 @@ Queue format
 * The objects are the songs
 * Most recent song at the end, next song to be played at beginning
 
+Checking for browser support
+----------------------------
+We use localStorage for storing the queue data, this can be used to check that this feature is supported on the client's browser
+```javascript
+queueDB.checkBrowserSupport()
+```
+Returns ```true``` if it works, else pops up an alertbox with the text 'Your browser does not support HTML5 localStorage. Musiq won\'t work properly. Try upgrading :).'
+
 Getting the queue
 -----------------
-~~~javascript
+```javascript
 queueDB.getQueueList();
-~~~
+```
 Returns the queue as an ordered list of song objects
 
 Writing the queue
@@ -41,9 +49,32 @@ queueDB.setQueueFromList(queueList);
 ~~~
 Overwrites the queue with the list past in as a parameter
 
-Modifying the queue
--------------------
-  * Adding a song
-  ~~~js
+Adding a song to the end of the Queue
+-------------------------------------
+```javascript
 queueDB.addSongToQueue(songObject);
-  ~~~
+```
+Adds a song object, the argument is a javascript song object as defined [here](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#song-stored-in-db-format)
+
+Popping a song from the Queue
+-----------------------------
+```javascript
+queueDB.popNextSongInQueue();
+```
+Returns the first song if it exists, else returns ```null```
+
+Removing a Song from the Queue
+------------------------------
+```javascript
+queueDB.removeSongFromQueue(index);
+```
+Removes the song at the index passed as a parameter from the queue
+Returns the new queue if it works, returns ```false``` if it fails
+
+Querying for a song in the queue
+--------------------------------
+This isn't necessary since you can get the list and parse it directly on your client, it still remains possible:
+```javascript
+queueDB.getSongByIdentifier(identifier, value);
+```
+Returns the song element if found, returns ```null``` if not found
