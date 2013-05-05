@@ -23,9 +23,9 @@ Example of a song, with the information we will find in the DB
 
 Queue format
 ------------
-*The queue is an ordered javascript array
-*The objects are the songs
-*Most recent song at the end, next song to be played at beginning
+* The queue is an ordered javascript array
+* The objects are the songs
+* Most recent song at the end, next song to be played at beginning
 
 Getting the queue
 -----------------
