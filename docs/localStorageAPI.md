@@ -42,9 +42,9 @@ Queue format
 ```json
   {"songQueue":
     [
-      {song 1},
-      {song 2},
-      {song 3}
+      {song1},
+      {song2},
+      {song3}
     ]
   }
 ```
