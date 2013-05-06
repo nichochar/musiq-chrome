@@ -26,7 +26,7 @@ function Queue = function() {
     }
   };
 
-  this._getQueue = function() {
+  this.getQueue = function() {
     //Returns the queue as an ordered list of song objects
     this._initializeDB();
     var result = JSON.parse(localStorage['songQueue']);
@@ -93,7 +93,7 @@ function Queue = function() {
       return false
     }
   };
-  
+
   // Init setup
   if (this._checkBrowserSupport())
     this._initializeDB();
