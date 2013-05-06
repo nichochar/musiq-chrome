@@ -10,7 +10,7 @@
       "scripts/soundcloud.js",
       "scripts/background.js",
       "scripts/jquery-ui.js",
-      "scripts/database.js",
+      "scripts/queue.js",
       "scripts/utilities.js",
       "scripts/main.js"
     ]

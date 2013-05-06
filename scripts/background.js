@@ -1,7 +1,7 @@
 var audioPlayer = {
 
   initializePlayer: function(src) {
-    var audioTag = "<audio id='audio-player'  src='"+src+"' controls='true' autoplay='true'/></audio>";
+    var audioTag = "<audio id='audio-player'  src='"+src+"' controls='true' autoload='true'/></audio>";
     $('body').append(audioTag);
   },
 
@@ -28,7 +28,7 @@ var audioPlayer = {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  //audioPlayer.initializePlayer("http://www.largesound.com/ashborytour/sound/brobob.mp3");
+  audioPlayer.initializePlayer("http://api.soundcloud.com/tracks/77149992/stream?client_id=05c0a3124f51da642f038a52344b3dfa");
  //audioPlayer.initializeSoundCloudPlayer();
   //audioPlayer.playSoundcloudTrack(293);
 });
