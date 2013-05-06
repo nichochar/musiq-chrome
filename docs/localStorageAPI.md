@@ -53,14 +53,14 @@ Checking for browser support
 ----------------------------
 We use localStorage for storing the queue data, this can be used to check that this feature is supported on the client's browser
 ```javascript
-queueDB.checkBrowserSupport()
+queueDB._checkBrowserSupport()
 ```
 Returns ```true``` if it works, else pops up an alertbox with the text 'Your browser does not support HTML5 localStorage. Musiq won\'t work properly. Try upgrading :).'
 
 Getting the queue
 -----------------
 ```javascript
-queueDB.getQueueList();
+queueDB.getQueue();
 ```
 Returns the queue as an ordered list of song objects
 
@@ -74,21 +74,21 @@ Overwrites the queue with the list past in as a parameter. This should be avoide
 Adding a song to the end of the Queue
 -------------------------------------
 ```javascript
-queueDB.addSongToQueue(songObject);
+queueDB.addSong(songObject);
 ```
 Adds a song object, the argument is a javascript song object as defined [here](https://github.com/nichochar/musiq-chrome/edit/documentation/docs/localStorageAPI.md#song-stored-in-db-format)
 
 Popping a song from the Queue
 -----------------------------
 ```javascript
-queueDB.popNextSongInQueue();
+queueDB.popNextSong();
 ```
 Returns the first song if it exists, else returns ```null```
 
 Removing a Song from the Queue
 ------------------------------
 ```javascript
-queueDB.removeSongFromQueue(index);
+queueDB.removeSong(index);
 ```
 Removes the song at the index passed as a parameter from the queue
 Returns the new queue if it works, returns ```false``` if it fails
