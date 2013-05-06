@@ -3,7 +3,7 @@
 // The most recent song is at the end
 // The next song to be played is at the beginning
 
-function Queue = function() {
+function Queue() {
   // Checks for browser support of the localStorage
 	this._checkBrowserSupport = function() {
 		if (typeof(localStorage) == 'undefined' ) {
