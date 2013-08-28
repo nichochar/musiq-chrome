@@ -15,7 +15,7 @@
       "scripts/main.js"
     ]
   },
-  "description": "This extension allows to control one's web based music experience better.",
+  "description": "This extension allows to control one's web browser based music experience better.",
   "icons":{ "16" : "images/musiq_icon_16.png",
             "48" : "images/musiq_icon_48.png"
           },
@@ -24,6 +24,7 @@
     "default_icon": "images/musiq_icon_19.png",
     "default_popup": "html/popup.html"
   },
+
   "permissions": [
     "https://secure.flickr.com/",
     "https://connect.soundcloud.com/soundmanager2",

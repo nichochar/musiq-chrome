@@ -79,11 +79,11 @@ var kittenGenerator = {
 
 
 
-// Run our kitten generation script as soon as the document's DOM is ready.
+// OnLoad events
 document.addEventListener('DOMContentLoaded', function () {
   //audioPlayer.initializePlayer("http://www.largesound.com/ashborytour/sound/brobob.mp3");
  jsono = [{'bitch':'you cray'},{'oh hai':'nigga'},{'oh hei':'bitch'}];
- var queueDB = Queue()
+ var queueDB = Queue();
  queueDB.setQueueFromList(jsono);
   console.log(queueDB.getQueue());
   console.log('popping next song');

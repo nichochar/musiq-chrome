@@ -1,7 +1,7 @@
 var audioPlayer = {
 
   initializePlayer: function(src) {
-    var audioTag = "<audio id='audio-player'  src='"+src+"' controls='true' autoload='true'/></audio>";
+    var audioTag = "<audio id='audio-player'  src='"+src+"' controls='true' autoplay='autoplay'/></audio>";
     $('body').append(audioTag);
   },
 
